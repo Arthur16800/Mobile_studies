@@ -14,7 +14,8 @@ export default function Login(){
                 console.log(response.data.message)
                 Alert.alert(response.data.message)
            },(error)=>{
-                console.log(error)
+                console.log( error)
+                Alert.alert('Erro', error.response.data.error)
            }
         )
     }

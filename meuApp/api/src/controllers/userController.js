@@ -26,13 +26,17 @@ module.exports = class userController {
             if (err.code === "ER_DUP_ENTRY") {
               return res
                 .status(400)
-                .json({ error: "O email ou cpf já está vinculado a outro usuário" });
-            } else {
+                .json({
+                  error: "O email ou cpf já está vinculado a outro usuário",
+                });
+            } 
+            else {
               return res.status(500).json({
                 error: "erro interno do servidor :(",
               });
             }
-          } else {
+          } 
+          else {
             return res
               .status(201)
               .json({ message: "Usuário cadastrado com sucesso" });
